@@ -1,0 +1,15 @@
+---
+- host: servers
+  become: true
+  tasks:
+  - name: Install unrar
+    apt: name=unrar force_apt_get=yes update_cache=yes state=present
+  - name: Add user
+    user:
+	name: user
+  - name: send files for installation
+    copy: src=Major2/installl.rar desc=/home/user/Desktop/
+  - name: Extract installl.rar
+    command: unrar x -r /home/user/Desktop/installl.rar /home/user/Desktop/
+  - name: run shell script
+    command: sh /home/user/Desktop/installl/runme.sh
