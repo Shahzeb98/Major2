@@ -123,8 +123,6 @@ sudo cp /home/$unamee/Desktop/installl/yarn-site.xml /usr/local/hadoop/etc/hadoo
 sudo chmod 777 /usr/local/hadoop/etc/hadoop/yarn-site.xml
 echo "This is the last file"
 
-sh ys.sh
-
 sed -i 's/<value>\/home\/sample1\/tmp<\/value>/<value>\/home\/'$unamee'\/tmp<\/value>/' /usr/local/hadoop/etc/hadoop/core-site.xml
 echo "done"
 sed -i 's/<value>\/home\/sample1\/tmp\/namenode<\/value>/<value>\/home\/'$unamee'\/tmp\/namenode<\/value>/' /usr/local/hadoop/etc/hadoop/hdfs-site.xml
