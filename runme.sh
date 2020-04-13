@@ -110,10 +110,20 @@ sed -i 's/export JAVA_HOME=${JAVA_HOME}/export JAVA_HOME=\/usr\/lib\/jvm\/java-8
 echo "Done"
 
 echo "****************************************************************************************************************************"
-./cs.sh
-./hs.sh
-./ms.sh
-./ys.sh
+sudo cp /home/$u/Desktop/installl/core-site.xml /usr/local/hadoop/etc/hadoop/core-site.xml
+sudo chmod 777 /usr/local/hadoop/etc/hadoop/core-site.xml
+echo "Three files to go" 
+sudo cp /home/$us/Desktop/installl/hdfs-site.xml /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+sudo chmod 777 /usr/local/hadoop/etc/hadoop/hdfs-site.xml
+echo "Two files to go"
+sudo cp /home/$use/Desktop/installl/mapred-site.xml /usr/local/hadoop/etc/hadoop/mapred-site.xml
+sudo chmod 777 /usr/local/hadoop/etc/hadoop/mapred-site.xml
+echo "One more file to go"
+sudo cp /home/$user/Desktop/installl/yarn-site.xml /usr/local/hadoop/etc/hadoop/yarn-site.xml
+sudo chmod 777 /usr/local/hadoop/etc/hadoop/yarn-site.xml
+echo "This is the last file"
+
+sh ys.sh
 
 sed -i 's/<value>\/home\/sample1\/tmp<\/value>/<value>\/home\/'$unamee'\/tmp<\/value>/' /usr/local/hadoop/etc/hadoop/core-site.xml
 echo "done"
