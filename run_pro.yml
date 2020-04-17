@@ -1,15 +1,17 @@
 ---
-- host: servers
+- hosts: servers
   become: true
   tasks:
   - name: Install unrar
     apt: name=unrar force_apt_get=yes update_cache=yes state=present
-  - name: Add user
+  - name: Add hadoop
     user:
-	name: user
+     name: hadoop
   - name: send files for installation
-    copy: src=Major2/installl.rar desc=/home/user/Desktop/
+    copy: src=installl.rar dest/home/hadoop/Desktop/ follow=yes mode=preserve
   - name: Extract installl.rar
-    command: unrar x -r /home/user/Desktop/installl.rar /home/user/Desktop/
+    command: 
+     cmd: unrar x -r /home/user/Desktop/installl.rar /home/user/Desktop/
   - name: run shell script
-    command: sh /home/user/Desktop/installl/runme.sh
+    command: 
+     cmd: sh /home/user/Desktop/installl/runme.sh
